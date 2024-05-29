@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CourseDetailRoutingModule } from './course-detail-routing.module';
+import { CourseDetailComponent } from './course-detail-component/course-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,12 +15,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent ],
+  declarations: [CourseDetailComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    CourseDetailRoutingModule,
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
@@ -33,8 +30,6 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCardModule,
     MatTableModule,
     MatDialogModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class CourseDetailModule { }

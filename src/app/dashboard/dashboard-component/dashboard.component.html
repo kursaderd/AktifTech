@@ -1,0 +1,20 @@
+<div class="container" *ngFor="let course of courseList" style="padding: 50px;">
+    <div class="row">
+      <div class="col-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ course.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="text"><strong>Açıklama:</strong> {{ course.description }}</p>
+            <p class="text"><strong>Eğitmen:</strong> {{ course.instructor }}</p>
+            <p class="text"><strong>İçerik:</strong> {{ course.content }}</p>
+            <p class="text"><strong>Süresi (ay):</strong> {{ course.duration }}</p>
+            <p class="text"><strong>Zorluk Seviyesi:</strong> {{ course.difficultyLevel }}</p>
+            <p class="text"><strong>Tamamlanma Yüzdesi:</strong> <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar> {{progressValue }}%</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

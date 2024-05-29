@@ -1,0 +1,19 @@
+<div class="container" *ngIf="course" style="padding: 50px;">
+    <div class="row">
+      <div class="col-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ course.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Açıklama:</strong> {{ course.description }}</p>
+            <p><strong>Eğitmen:</strong> {{ course.instructor }}</p>
+            <p><strong>İçerik:</strong> {{ course.content }}</p>
+            <p><strong>Süresi (ay):</strong> {{ course.duration }}</p>
+            <p><strong>Zorluk Seviyesi:</strong> {{ course.difficultyLevel }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

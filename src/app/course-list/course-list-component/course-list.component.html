@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="padding: 13px;" *ngIf="this.userId ==='1'">
+      <button mat-raised-button color="primary" (click)="openAddEditDialog()">Kurs Ekle</button>
+    </div>
+    <div class="col-12">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Başlık </th>
+          <td mat-cell *matCellDef="let course"> {{ course.title }} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Açıklama </th>
+          <td mat-cell *matCellDef="let course"> {{ course.description }} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="instructor">
+          <th mat-header-cell *matHeaderCellDef> Eğitmen  </th>
+          <td mat-cell *matCellDef="let course"> {{ course.instructor }} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Butonlar </th>
+          <td mat-cell *matCellDef="let course">
+            <button mat-icon-button color="primary" (click)="openAddEditDialog(course);$event.stopPropagation();" *ngIf="this.userId ==='1'">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCourse(course.id);$event.stopPropagation();" *ngIf="this.userId ==='1'">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="green" (click)="enrollInCourse(course.id);$event.stopPropagation();">
+              <mat-icon>app_registration</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="viewCourseDetail(row)"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
